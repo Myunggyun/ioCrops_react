@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import data from './data/data.json'
 import data1 from './data/data-1.json'
+import Chart from './Chart'
 
 type JsonData = {
     time:string;
@@ -26,11 +27,17 @@ function App() {
   const [datas, setDatas] = useState<JsonData>([])
 
   useEffect(()=>{
-    setDatas((prev)=>prev.concat(data.dataset, data1.dataset))
+    setDatas((prev)=>prev.concat(data1.dataset, data.dataset))
   }, [])
 
   return (
-    <div >hello world</div>
+    <>
+    <div>
+      hello world
+    </div>
+    <Chart chartdata={datas}/>
+    </>
+
   );
 }
 
