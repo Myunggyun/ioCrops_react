@@ -81,6 +81,7 @@ function MiddleValuesChart({ chartdata }: ChartDatas) {
         text: "value",
       },
     },
+    colors: ["#00FFC9", "#0027FF", "#8700FF"],
     responsive: {
       rules: [
         {
@@ -102,6 +103,10 @@ function MiddleValuesChart({ chartdata }: ChartDatas) {
     },
     series: legendValue,
     legend: {
+      title: {
+        text: "Hide or Show by Click",
+      },
+      borderWidth: 1,
       layout: "vertical",
       align: "right",
       verticalAlign: "middle",
@@ -124,8 +129,8 @@ function MiddleValuesChart({ chartdata }: ChartDatas) {
         <HighchartsReact highcharts={Highcharts} options={options} />
       </div>
       <ButtonWrapper>
-        <Button onClick={appearBtnClick}>Appear on Screen</Button>
-        <Button onClick={removeBtnClick}>Remove on Screen</Button>
+        <Button onClick={appearBtnClick}>All Data Appear</Button>
+        <Button onClick={removeBtnClick}>All Data Remove</Button>
       </ButtonWrapper>
     </>
   );

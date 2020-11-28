@@ -100,8 +100,13 @@ function MessValuesChart({ chartdata }: ChartDatas) {
         },
       ],
     },
+    colors: ["#520000", "#00522D", "#717171"],
     series: legendValue,
     legend: {
+      title: {
+        text: "Hide or Show by Click",
+      },
+      borderWidth: 1,
       layout: "vertical",
       align: "right",
       verticalAlign: "middle",
@@ -124,8 +129,8 @@ function MessValuesChart({ chartdata }: ChartDatas) {
         <HighchartsReact highcharts={Highcharts} options={options} />
       </div>
       <ButtonWrapper>
-        <Button onClick={appearBtnClick}>Appear on Screen</Button>
-        <Button onClick={removeBtnClick}>Remove on Screen</Button>
+        <Button onClick={appearBtnClick}>All Data Appear</Button>
+        <Button onClick={removeBtnClick}>All Data Remove</Button>
       </ButtonWrapper>
     </>
   );
