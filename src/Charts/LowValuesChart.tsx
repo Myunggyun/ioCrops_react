@@ -82,6 +82,7 @@ function LowValuesChart({ chartdata }: ChartDatas) {
         text: "value",
       },
     },
+    colors: ["#0078FF", "#FF0068", "#3AFF00"],
     responsive: {
       rules: [
         {
@@ -103,9 +104,14 @@ function LowValuesChart({ chartdata }: ChartDatas) {
     },
     series: legendValue,
     legend: {
+      title: {
+        text: "Hide or Show by Click",
+      },
       layout: "vertical",
       align: "right",
       verticalAlign: "middle",
+      borderWidth: 1,
+      padding: 8,
       labelFormatter: function (): string {
         var obj: any = this;
         var lastVal: number =
@@ -114,7 +120,7 @@ function LowValuesChart({ chartdata }: ChartDatas) {
               typeof cur === "number" ? acc + cur : acc,
             0
           ) / chartdata.length;
-        return `${obj.name} Avg : ` + lastVal.toFixed(2);
+        return `${obj.name} Ag : ` + lastVal.toFixed(2);
       },
     },
   };
@@ -125,8 +131,8 @@ function LowValuesChart({ chartdata }: ChartDatas) {
         <HighchartsReact highcharts={Highcharts} options={options} />
       </div>
       <ButtonWrapper>
-        <Button onClick={appearBtnClick}>Appear on Screen</Button>
-        <Button onClick={removeBtnClick}>Remove on Screen</Button>
+        <Button onClick={appearBtnClick}>All Data Appear</Button>
+        <Button onClick={removeBtnClick}>All Data Remove</Button>
       </ButtonWrapper>
     </>
   );

@@ -92,8 +92,13 @@ function HighValuesChart({ chartdata }: ChartDatas) {
         },
       ],
     },
+    colors: ["#2EA4CA", "#FF5D00"],
     series: legendValue,
     legend: {
+      title: {
+        text: "Hide or Show by Click",
+      },
+      borderWidth: 1,
       layout: "vertical",
       align: "right",
       verticalAlign: "middle",
@@ -116,8 +121,8 @@ function HighValuesChart({ chartdata }: ChartDatas) {
         <HighchartsReact highcharts={Highcharts} options={options} />
       </div>
       <ButtonWrapper>
-        <Button onClick={appearBtnClick}>Appear on Screen</Button>
-        <Button onClick={removeBtnClick}>Remove on Screen</Button>
+        <Button onClick={appearBtnClick}>All Data Appear</Button>
+        <Button onClick={removeBtnClick}>All Data Remove</Button>
       </ButtonWrapper>
     </>
   );
